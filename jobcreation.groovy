@@ -14,4 +14,14 @@ job('SampleWebapp') {
 			branch('master')	
         }
     }
+	
+	steps
+	{
+		maven
+		{
+			goals('clean')
+			goals('install')
+		}
+	
+	}
 }
