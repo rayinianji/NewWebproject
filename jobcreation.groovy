@@ -27,8 +27,8 @@ job('SampleWebapp') {
     publishers{
 
     publishOverSsh{
-        alwaysPublishFromMaster(boolean alwaysPublishFromMaster = true)
-        failOnError(boolean failOnError = true)
+        //alwaysPublishFromMaster(boolean alwaysPublishFromMaster = true)
+        //failOnError(boolean failOnError = true)
         def Server_1 = '3.135.228.184'
         server(Server_1)
         {
