@@ -24,4 +24,22 @@ job('SampleWebapp') {
 		}
 
 	}
+    publishers{
+
+    publishOverSsh{
+        alwaysPublishFromMaster(boolean alwaysPublishFromMaster = true)
+        failOnError(boolean failOnError = true)
+        server(String '3.135.228.184')
+        {
+            credentials('Tomcat_dev')
+            transferSet
+            {
+                sourceFiles('target/*.war')
+                remoteDirectory('/opt/tomcat/apache-tomcat-8.5.45/webapps')
+            }
+        }
+
+
+    }
+    }
 }
