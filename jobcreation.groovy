@@ -29,7 +29,8 @@ job('SampleWebapp') {
     publishOverSsh{
         alwaysPublishFromMaster(boolean alwaysPublishFromMaster = true)
         failOnError(boolean failOnError = true)
-        server(String '3.135.228.184')
+        def Server = '3.135.228.184'
+        server(String Server)
         {
             credentials('Tomcat_dev')
             transferSet
