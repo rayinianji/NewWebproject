@@ -22,12 +22,6 @@ job('SampleWebapp') {
 			goals('clean')
 			goals('install')
 		}
-		
-		sshagent(['Tomcat_dev']) {
- 
-                    sh 'scp -o StrictHostKeyChecking=no target/*.war ubuntu@172.31.44.227:/opt/tomcat/apache-tomcat-8.5.45/webapps'
- 
-             }
-	
+
 	}
 }
