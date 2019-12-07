@@ -2,7 +2,7 @@ node('master')
 {
    def Mvnhome
    Mvnhome= tool 'maven3.6'
-   def server = 52.15.141.185
+   def server = '52.15.141.185'
    stage ('SCM Checking out')
    {
       print "Checking out in progress...."
