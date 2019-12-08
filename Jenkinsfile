@@ -28,12 +28,12 @@ node('master')
        sh "${Mvnhome}/bin/mvn install"
    } 
 
-   stage ('Build image')
+   /*stage ('Build image')
    {
 
         print " Builing image started ... "
         sh 'docker build -t '
-   }
+   }*/
    
    stage ('Deplyoing to tomcat server..')
    {
