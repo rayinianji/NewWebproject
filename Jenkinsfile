@@ -41,7 +41,7 @@ node('master')
        
        sshagent(['web_tom']) {
  
-                    sh 'scp -o StrictHostKeyChecking=no target/*.war ubuntu@172.31.44.227:/opt/tomcat/apache-tomcat-8.5.45/webapps'
+                    sh 'scp -o StrictHostKeyChecking=no target/*.war ubuntu@172.31.21.120:/usr/local/apache-tomcat9/webapps/'
  
              }
        
