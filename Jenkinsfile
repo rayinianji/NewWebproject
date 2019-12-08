@@ -28,14 +28,24 @@ node('master')
        sh "${Mvnhome}/bin/mvn install"
    } 
 
-   /*stage ('Build image')
+   stage ('Build image')
    {
 
         print " Builing image started ... "
-        sh 'docker build -t '
-   }*/
+        sh 'docker build -t anjidockerid/my_app:1.0 .'
+   }
+
+   stage ('Push Image to Docker Hub')
+   {
+      print " Pushing images......"
+      withCredentials([string(credentialsId: 'dockerhub_pwd', variable: 'docker_hubacc')]) {
+         sh "docker login -u kammana -p ${docker_hubacc}"
+      }
+      
+      sh 'docker push anjidockerid/my_app:1.0'
+   }
    
-   stage ('Deplyoing to tomcat server..')
+  /* stage ('Deplyoing to tomcat server..')
    {
        //sh "ssh -T 'ubuntu@${server}' /opt/"
        
@@ -43,7 +53,7 @@ node('master')
  
                     sh 'scp -o StrictHostKeyChecking=no target/*.war ubuntu@172.31.21.120:/usr/local/apache-tomcat9/webapps/'
  
-             }
+             }*/
        
    }
 }
