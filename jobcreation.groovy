@@ -1,7 +1,7 @@
 folder('Webprojects') {
     displayName('ABC WebProject')
     description('Folder for project ABC')
-}
+
 
 job('SampleWebapp') {
     scm {
@@ -24,7 +24,7 @@ job('SampleWebapp') {
 		}
 
 	}
-    publishers{
+   /*publishers{
 
     publishOverSsh{
         //alwaysPublishFromMaster(boolean alwaysPublishFromMaster = true)
@@ -42,5 +42,6 @@ job('SampleWebapp') {
 
 
     }
-    }
+    }*/
+}
 }
